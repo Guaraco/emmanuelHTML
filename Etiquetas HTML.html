@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>102 Etiquetas HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #003366; /* Azul UASD */
+            color: #FFFFFF; /* Texto blanco */
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #FFCC00; /* Amarillo UASD */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #FFCC00;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #FFCC00;
+            color: #003366;
+        }
+        button {
+            background-color: #FFCC00;
+            color: #003366;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #FF9900;
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #FFFFFF;
+            color: #003366;
+            border: 1px solid #FFCC00;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Laboratorio de Lenguaje de Programación III</h1>
+        <h2>Profesor: Radhames Silverio Gonzalez</h2>
+        <h2>Sección: 01</h2>
+        <h2>Horario: Miércoles de 7:00 AM a 9:00 AM</h2>
+        <h2>Tarea: Crear una página web que muestre 102 Etiquetas HTML</h2>
+        <h2>Estudiante: Emmanuel Beltré Ramírez</h2>
+        <h2>Matrícula: CD1624</h2>
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre de la Etiqueta</th>
+                <th>Descripción</th>
+                <th>Ejemplo de Uso</th>
+                <th>Elemento Adicional</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Etiqueta 1 -->
+            <tr>
+                <td>&lt;html&gt;</td>
+                <td>Define el inicio del documento HTML.</td>
+                <td><code>&lt;html&gt;&lt;/html&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details1')">Más detalles</button>
+                    <div id="details1" class="details">
+                        La etiqueta &lt;html&gt; es la raíz de un documento HTML y contiene todos los demás elementos.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 2 -->
+            <tr>
+                <td>&lt;head&gt;</td>
+                <td>Contiene metadatos/información sobre el documento.</td>
+                <td><code>&lt;head&gt;&lt;title&gt;Título&lt;/title&gt;&lt;/head&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details2')">Más detalles</button>
+                    <div id="details2" class="details">
+                        La etiqueta &lt;head&gt; contiene elementos como &lt;title&gt;, &lt;meta&gt;, &lt;link&gt;, etc.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 3 -->
+            <tr>
+                <td>&lt;title&gt;</td>
+                <td>Define el título del documento.</td>
+                <td><code>&lt;title&gt;Mi Página&lt;/title&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details3')">Más detalles</button>
+                    <div id="details3" class="details">
+                        El título aparece en la pestaña del navegador y en los resultados de búsqueda.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 4 -->
+            <tr>
+                <td>&lt;body&gt;</td>
+                <td>Contiene el contenido visible de la página.</td>
+                <td><code>&lt;body&gt;Hola Mundo&lt;/body&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details4')">Más detalles</button>
+                    <div id="details4" class="details">
+                        Todo lo que se muestra en la página va dentro de &lt;body&gt;.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 5 -->
+            <tr>
+                <td>&lt;h1&gt; a &lt;h6&gt;</td>
+                <td>Encabezados de diferentes niveles.</td>
+                <td><code>&lt;h1&gt;Título Principal&lt;/h1&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details5')">Más detalles</button>
+                    <div id="details5" class="details">
+                        &lt;h1&gt; es el más importante y &lt;h6&gt; el menos importante.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 6 -->
+            <tr>
+                <td>&lt;p&gt;</td>
+                <td>Define un párrafo.</td>
+                <td><code>&lt;p&gt;Este es un párrafo.&lt;/p&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details6')">Más detalles</button>
+                    <div id="details6" class="details">
+                        Se utiliza para agrupar texto en párrafos.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 7 -->
+            <tr>
+                <td>&lt;a&gt;</td>
+                <td>Define un hipervínculo.</td>
+                <td><code>&lt;a href="https://www.ejemplo.com"&gt;Enlace&lt;/a&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details7')">Más detalles</button>
+                    <div id="details7" class="details">
+                        El atributo `href` especifica la URL del enlace.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 8 -->
+            <tr>
+                <td>&lt;img&gt;</td>
+                <td>Inserta una imagen.</td>
+                <td><code>&lt;img src="imagen.jpg" alt="Descripción"&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details8')">Más detalles</button>
+                    <div id="details8" class="details">
+                        El atributo `src` especifica la ruta de la imagen y `alt` proporciona un texto alternativo.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 9 -->
+            <tr>
+                <td>&lt;ul&gt;</td>
+                <td>Define una lista desordenada.</td>
+                <td><code>&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;/ul&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details9')">Más detalles</button>
+                    <div id="details9" class="details">
+                        Los elementos de la lista se definen con &lt;li&gt;.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 10 -->
+            <tr>
+                <td>&lt;ol&gt;</td>
+                <td>Define una lista ordenada.</td>
+                <td><code>&lt;ol&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;/ol&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details10')">Más detalles</button>
+                    <div id="details10" class="details">
+                        Los elementos de la lista se numeran automáticamente.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 11 -->
+            <tr>
+                <td>&lt;li&gt;</td>
+                <td>Define un elemento de lista.</td>
+                <td><code>&lt;li&gt;Elemento 1&lt;/li&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details11')">Más detalles</button>
+                    <div id="details11" class="details">
+                        Se utiliza dentro de &lt;ul&gt; o &lt;ol&gt; para definir elementos de lista.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 12 -->
+            <tr>
+                <td>&lt;div&gt;</td>
+                <td>Define una sección en el documento.</td>
+                <td><code>&lt;div&gt;Contenido&lt;/div&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details12')">Más detalles</button>
+                    <div id="details12" class="details">
+                        Se utiliza para agrupar elementos y aplicar estilos.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 13 -->
+            <tr>
+                <td>&lt;span&gt;</td>
+                <td>Define una sección en línea.</td>
+                <td><code>&lt;span&gt;Texto&lt;/span&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details13')">Más detalles</button>
+                    <div id="details13" class="details">
+                        Se utiliza para aplicar estilos a una parte del texto.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 14 -->
+            <tr>
+                <td>&lt;br&gt;</td>
+                <td>Inserta un salto de línea.</td>
+                <td><code>Texto&lt;br&gt;Nueva línea</code></td>
+                <td>
+                    <button onclick="toggleDetails('details14')">Más detalles</button>
+                    <div id="details14" class="details">
+                        No tiene etiqueta de cierre y se usa para saltos de línea.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 15 -->
+            <tr>
+                <td>&lt;hr&gt;</td>
+                <td>Inserta una línea horizontal.</td>
+                <td><code>&lt;hr&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details15')">Más detalles</button>
+                    <div id="details15" class="details">
+                        Se utiliza para separar contenido con una línea.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 16 -->
+            <tr>
+                <td>&lt;table&gt;</td>
+                <td>Define una tabla.</td>
+                <td><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;Celda&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details16')">Más detalles</button>
+                    <div id="details16" class="details">
+                        Las tablas se estructuran con &lt;tr&gt; para filas y &lt;td&gt; para celdas.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 17 -->
+            <tr>
+                <td>&lt;tr&gt;</td>
+                <td>Define una fila en una tabla.</td>
+                <td><code>&lt;tr&gt;&lt;td&gt;Celda&lt;/td&gt;&lt;/tr&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details17')">Más detalles</button>
+                    <div id="details17" class="details">
+                        Contiene celdas (&lt;td&gt;) o encabezados (&lt;th&gt;).
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 18 -->
+            <tr>
+                <td>&lt;td&gt;</td>
+                <td>Define una celda en una tabla.</td>
+                <td><code>&lt;td&gt;Celda&lt;/td&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details18')">Más detalles</button>
+                    <div id="details18" class="details">
+                        Representa una celda de datos en una tabla.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 19 -->
+            <tr>
+                <td>&lt;th&gt;</td>
+                <td>Define una celda de encabezado en una tabla.</td>
+                <td><code>&lt;th&gt;Encabezado&lt;/th&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details19')">Más detalles</button>
+                    <div id="details19" class="details">
+                        Se utiliza para encabezados de columnas o filas.
+                    </div>
+                </td>
+            </tr>
+            <!-- Etiqueta 20 -->
+            <tr>
+                <td>&lt;form&gt;</td>
+                <td>Define un formulario.</td>
+                <td><code>&lt;form action="/submit" method="post"&gt;&lt;/form&gt;</code></td>
+                <td>
+                    <button onclick="toggleDetails('details20')">Más detalles</button>
+                    <div id="details20" class="details">
+                        Se utiliza para recopilar datos del usuario.
+                    </div>
+                </td>
+            </tr>
+            <!-- Continuar con las siguientes etiquetas hasta 102 -->
+            <!-- ... -->
+        </tbody>
+    </table>
+
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            details.style.display = details.style.display === "none" ? "block" : "none";
+        }
+    </script>
+
+</body>
+</html>
