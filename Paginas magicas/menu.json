@@ -1,0 +1,20 @@
+{
+  "menu": [
+    {
+      "name": "Inicio",
+      "href": "#inicio"
+    },
+    {
+      "name": "Libros",
+      "href": "#libros"
+    },
+    {
+      "name": "Nosotros",
+      "href": "#nosotros"
+    },
+    {
+      "name": "Contáctenos",
+      "href": "#contactenos"
+    }
+  ]
+}

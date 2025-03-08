@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+    <item>
+        <name>Inicio</name>
+        <link>#inicio</link>
+    </item>
+    <item>
+        <name>Libros</name>
+        <link>#libros</link>
+    </item>
+    <item>
+        <name>Nosotros</name>
+        <link>#nosotros</link>
+    </item>
+    <item>
+        <name>Contáctenos</name>
+        <link>#contactenos</link>
+    </item>
+</menu>
