@@ -1,0 +1,493 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Estilos globales */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+* {
+    box-sizing: border-box;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    
+
+    background: #2C3E50;
+    color: #fff;
+    height: 100px;
+}
+
+.pie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 0px 0px;
+    width: 98.6%;
+    margin: 0;
+    padding: 5px;
+    background: #2C3E50;
+    color: #fff;
+    height: 40px;
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    z-index: 1000; 
+    text-align: center;
+}
+
+/* Contenedor con Grid para mostrar 5 libros por fila */
+.contenedor-libros {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas iguales*/ 
+    gap: 20px; /* Espacio entre libros */
+    padding: 5px;
+    justify-content: center;
+    max-width: 100%; /* Para que no se desborde */
+    margin-top: 100px; /* Ajusta si es necesario */
+}
+
+/* Estilos para cada libro */
+.libro {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+
+/* Hacerlo responsive */
+@media (max-width: 1024px) {
+    .contenedor-libros {
+        grid-template-columns: repeat(3, 1fr); /* 3 por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-libros {
+        grid-template-columns: repeat(2, 1fr); /* 2 por fila en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-libros {
+        grid-template-columns: repeat(1, 1fr); /* 1 por fila en móviles */
+    }
+}
+
+.contenedor-libros {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.libros-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px;
+}
+
+/* Oculta barra de desplazamiento en Chrome y Safari */
+.libros-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.libro {
+    flex: 0 0 auto;
+    width: 200px;
+    scroll-snap-align: start;
+    text-align: center;
+}
+
+.libro img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.encabezado .titulo {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-left: -500px;
+}
+
+.encabezado .titulo h1 {
+    margin-bottom: 5px;
+}
+
+.encabezado .titulo p {
+    margin-top: 0;
+}
+
+.encabezado nav {
+    display: flex;
+    gap: 10px;
+}
+
+.encabezado img {
+    margin-right: 0px;
+}
+
+.encabezado nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.encabezado nav a:hover {
+    text-decoration: underline;
+}
+
+.Principal section {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Inicio {
+    text-align: center;
+}
+
+/* Estilos de la sección de contacto */
+.contacto-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #34495E; /* Fondo de la sección de contacto */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Color del texto */
+    text-align: center;
+}
+
+.contacto-info p {
+    margin: 10px 0;
+}
+
+.contacto-info a {
+    color: #4CAF50; /* Color de los enlaces */
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.contacto-info a:hover {
+    text-decoration: underline;
+}
+
+.formulario-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #2C3E50; /* Fondo del formulario */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Color del texto */
+}
+
+.formulario-container h3 {
+    margin-bottom: 20px;
+    color: #4CAF50; /* Color del título */
+}
+
+.formulario-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formulario-container input, .formulario-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #34495E; /* Fondo de los campos */
+    color: #fff; /* Color del texto */
+}
+
+.formulario-container input::placeholder, .formulario-container textarea::placeholder {
+    color: #bbb; /* Color del placeholder */
+}
+
+.formulario-container button {
+    padding: 10px 15px;
+    background-color: #1ABC9C; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.formulario-container button:hover {
+    background-color: #E67E22; /* Color del botón al pasar el mouse */
+}
+
+/* Media Queries para hacer la sección de contacto responsive */
+@media (max-width: 768px) {
+    .contacto-info, .formulario-container {
+        padding: 15px;
+    }
+
+    .formulario-container input, .formulario-container textarea {
+        padding: 8px;
+    }
+
+    .formulario-container button {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacto-info, .formulario-container {
+        padding: 10px;
+    }
+
+    .formulario-container input, .formulario-container textarea {
+        padding: 6px;
+    }
+
+    .formulario-container button {
+        padding: 6px 10px;
+    }
+}
+
+/* Estilos del formulario */
+.formulario-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #34495E; /* Fondo del formulario */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Color del texto */
+    text-align: center;
+}
+
+.formulario-container h3 {
+    margin-bottom: 20px;
+    color: #4CAF50; /* Color del título */
+}
+
+.formulario-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formulario-container input, .formulario-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #2C3E50; /* Fondo de los campos */
+    color: #fff; /* Color del texto */
+}
+
+.formulario-container input::placeholder, .formulario-container textarea::placeholder {
+    color: #bbb; /* Color del placeholder */
+}
+
+.formulario-container button {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.formulario-container button:hover {
+    background-color: #45a049; /* Color del botón al pasar el mouse */
+}
+
+/* Media Queries para hacer el formulario responsive */
+@media (max-width: 768px) {
+    .formulario-container {
+        padding: 15px;
+    }
+
+    .formulario-container input, .formulario-container textarea {
+        padding: 8px;
+    }
+
+    .formulario-container button {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario-container {
+        padding: 10px;
+    }
+
+    .formulario-container input, .formulario-container textarea {
+        padding: 6px;
+    }
+
+    .formulario-container button {
+        padding: 6px 10px;
+    }
+}
+
+/* Estilos de la sección de Nosotros */
+#nosotros {
+    padding: 20px;
+    background-color: #34495E; /* Fondo de la sección */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Color del texto */
+    margin-top: 20px;
+}
+
+#nosotros h2 {
+    color: #4CAF50; /* Color del título */
+    margin-bottom: 20px;
+}
+
+#nosotros p {
+    margin-bottom: 20px;
+}
+
+#nosotros .equipo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#nosotros .miembro {
+    background-color: #2C3E50; /* Fondo de cada miembro */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#nosotros .miembro img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Ajusta este valor para hacer las esquinas menos redondeadas */
+    margin-bottom: 10px;
+}
+
+#nosotros .miembro h4 {
+    margin-bottom: 5px;
+    color: #4CAF50; /* Color del nombre */
+}
+
+#nosotros .miembro p {
+    margin: 0;
+}
+
+/* Media Queries para hacer la sección de Nosotros responsive */
+@media (max-width: 768px) {
+    #nosotros {
+        padding: 15px;
+    }
+
+    #nosotros .miembro {
+        width: 200px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #nosotros {
+        padding: 10px;
+    }
+
+    #nosotros .miembro {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Animaciones para el efecto de carga */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+/* Aplica la animación a las secciones */
+.Inicio {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+.Eventos {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+.seccion {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+
+}
+
+
+
+/* Media Queries para hacer la sección de Nosotros responsive */
+@media (max-width: 768px) {
+    #nosotros {
+        padding: 15px;
+    }
+
+    #nosotros .miembro {
+        width: 200px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #nosotros {
+        padding: 10px;
+    }
+
+    #nosotros .miembro {
+        width: 100%;
+        padding: 10px;
+    }
+}

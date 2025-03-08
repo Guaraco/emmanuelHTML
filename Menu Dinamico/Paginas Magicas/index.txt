@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas Mágicas</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+
+
+        /* Mostrar la sección activa con :target */
+        #inicio:target, 
+        #libros:target, 
+        #nosotros:target, 
+        #contactenos:target {
+            display: block;
+        }
+
+        /* Mostrar la sección de inicio por defecto */
+        .seccion:first-of-type {
+            display: block;
+        }
+
+        /* Estilos de la navegación */
+        nav a {
+            text-decoration: none;
+            display: inline-block;
+            color: white;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        /* Estilos para los botones de comprar */
+        .boton-comprar {
+            display: block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #1ABC9C;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .boton-comprar:hover {
+        background-color: #E67E22; /* Color del botón al pasar el mouse */
+        }
+
+        /* Animación al pasar el mouse */
+        .libro {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .libro:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilos del formulario */
+        .formulario-container {
+            margin-top: 20px;
+        }
+
+        .formulario-container input, .formulario-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .formulario-container button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .formulario-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="encabezado">
+        <img src="Recursos/Logosinfondo.png" alt="Logo de Páginas Mágicas" width="100px" height="100px">
+        <div class="titulo">
+            <h1>Páginas Mágicas</h1>
+            <p style="font-style: italic;"><strong>Un hechizo en cada historia, un viaje en cada libro.</strong></p>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#libros">Libros</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contactenos">Contáctenos</a>
+        </nav>
+    </header>
+
+    <div class="Principal">
+        <section class="Inicio" id="Inicio">
+            <h2>¡Bienvenidos a Páginas Mágicas!</h2>
+            <p>En Páginas Mágicas, cada libro es una puerta a mundos extraordinarios. 
+                Somos una librería especializada en literatura de fantasía, donde los dragones surcan los cielos, los hechiceros desatan su poder y los héroes emprenden épicas aventuras.<br>
+        
+                <br>Si buscas perderte en reinos encantados, descubrir secretos olvidados o embarcarte en viajes inolvidables, este es tu lugar. 
+                Explora nuestras estanterías y deja que la magia de la lectura te guíe.
+            </p>
+        </section>
+        
+        <section class="Eventos" id="Eventos">
+            <h2>📅 Próximos Eventos</h2>
+            <ul>
+                <li><strong>📖 Noche de Lecturas Encantadas - 10/03/2025</strong> \ Sumérgete en la magia de la literatura con lecturas en vivo de cuentos y novelas de fantasía.</li>
+                <li><strong>🎭 Concurso de Cosplay Fantástico - 25/04/2025</strong> \ Vístete como tu personaje favorito y participa por premios mágicos.</li>
+                <li><strong>🖊️ Encuentro con Autores Mágicos - 02/05/2025</strong> \ Charlas, firmas de libros y preguntas en vivo con escritores de fantasía.</li>
+                <li><strong>🔮 Taller de Escritura Fantástica - 20/05/2025</strong> \ Aprende a crear mundos, personajes y tramas para escribir tu propia historia épica.</li>
+                <li><strong>🌟 Feria del Libro de Fantasía - 12/06/2025</strong> \ Disfruta de descuentos, ediciones limitadas y sorpresas para los amantes de la fantasía.</li>
+            </ul>
+            <p>✨ ¡No te pierdas la oportunidad de vivir la magia de la literatura en cada evento! ✨</p>
+        </section>
+
+                <section id="libros" class="seccion">
+                    <h2>Nuestros Libros</h2>
+                    <div class="contenedor-libros">
+                        <div class="libros-scroll">
+                            <div class="libro">
+                                <img src="Recursos/el-senor-de-los-anillos.jpg" alt="El Señor de los Anillos">
+                                <h3>El Señor de los Anillos</h3>
+                                <p>Precio: RD$1,200</p>
+                                <a href="#" class="boton-comprar">Comprar</a>
+                            </div>
+                            <div class="libro">
+                                <img src="Recursos/harry-potter.jpg" alt="Harry Potter">
+                                <h3>Harry Potter y la Piedra Filosofal</h3>
+                                <p>Precio: RD$900</p>
+                                <a href="#" class="boton-comprar">Comprar</a>
+                            </div>
+                            <div class="libro">
+                                <img src="Recursos/cronicas-de-narnia.jpg" alt="Las Crónicas de Narnia">
+                                <h3>Las Crónicas de Narnia</h3>
+                                <p>Precio: RD$1,000</p>
+                                <a href="#" class="boton-comprar">Comprar</a>
+                            </div>
+                            <div class="libro">
+                                <img src="Recursos/alicia-pais-maravillas.jpg" alt="Alicia en el País de las Maravillas">
+                                <h3>Alicia en el País de las Maravillas</h3>
+                                <p>Precio: RD$850</p>
+                                <a href="#" class="boton-comprar">Comprar</a>
+                            </div>
+                            <div class="libro">
+                                <img src="Recursos/el-hobbit.jpg" alt="El Hobbit">
+                                <h3>El Hobbit</h3>
+                                <p>Precio: RD$1,100</p>
+                                <a href="#" class="boton-comprar">Comprar</a>
+                            </div>
+                        </div>
+                    
+                        <div class="libro">
+                            <img src="Recursos/De sangre y ceniza.png" alt="De sangre y ceniza">
+                            <h3>De sangre y ceniza</h3>
+                            <p>Precio: RD$2000</p>
+                            <a href="#" class="boton-comprar">Comprar</a>
+                        </div>
+                
+                    <div class="libro">
+                        <img src="Recursos/cronicas.png" alt="Cronica de la Torre">
+                        <h3>Cronica de la Torre</h3>
+                        <p>Precio: RD$1500</p>
+                        <a href="#" class="boton-comprar">Comprar</a>
+                    </div>
+                    
+                    <div class="libro">
+                        <img src="Recursos/El arbol.png" alt="El arbol del Relampago">
+                        <h3>El arbol del Relampago </h3>
+                        <p>Precio: RD$1000</p>
+                        <a href="#" class="boton-comprar">Comprar</a>
+                    </div>
+               
+                <div class="libro">
+                    <img src="Recursos/El bosque.png" alt="El bosque Encantado">
+                    <h3>El bosque Encantado</h3>
+                    <p>Precio: RD$1700</p>
+                    <a href="#" class="boton-comprar">Comprar</a>
+                </div>
+            
+            <div class="libro">
+                <img src="Recursos/El castilo.png" alt="El castillo Ambulante">
+                <h3>El castillo Ambulante</h3>
+                <p>Precio: RD$1000</p>
+                <a href="#" class="boton-comprar">Comprar</a>
+            </div>
+        
+        <div class="libro">
+            <img src="Recursos/El colecionista.png" alt="El Colecionista de Brujas">
+            <h3>El Colecionista de Brujas</h3>
+            <p>Precio: RD$700</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/El libro.png" alt="El libro pr iniciar a los niños">
+            <h3>El libro para iniciar a los niños</h3>
+            <p>Precio: RD$500</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/el misterio.png" alt="El ministerio de la tundra">
+            <h3>El ministerio de la tundra</h3>
+            <p>Precio: RD$800</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/EL Reino.png" alt="El Reino de los Malditos ">
+            <h3>El Reino de los Malditos </h3>
+            <p>Precio: RD$1500</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/Eleacion de Ley.png" alt="Eleacion de Ley">
+            <h3>Eleacion de Ley</h3>
+            <p>Precio: RD$1100</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/elliot.png" alt="elliot">
+            <h3>elliot   TOMCLIDE</h3>
+            <p>Precio: RD$1400</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/Elnombre de viento.png" alt="El nombre deL viento">
+            <h3>El nombre deL viento</h3>
+            <p>Precio: RD$900</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/fuego y sangre.png" alt="fuego y sangre">
+            <h3>fuego y sangre</h3>
+            <p>Precio: RD$1900</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/Good omen.png" alt="Good omen">
+            <h3>Good omen</h3>
+            <p>Precio: RD$1600</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/Guardianes.png" alt="guardianes de Almas">
+            <h3>guardianes de Almas</h3>
+            <p>Precio: RD$9100</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/Los Dioses.png" alt="Los Dioses">
+            <h3>Los Dioses del Norte</h3>
+            <p>Precio: RD$1100</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/Los jardines.png" alt="Los jardines">
+            <h3>Los jardines de la luna</h3>
+            <p>Precio: RD$950</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/Mago.png" alt="Mago por casualidad">
+            <h3>Mago por casualidad</h3>
+            <p>Precio: RD$1900</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/Reino de guerra.png" alt="Reino de guerras">
+            <h3>Reino de guerras</h3>
+            <p>Precio: RD$2100</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/sin nombre.png" alt="La magias Real">
+            <h3>La magias Real</h3>
+            <p>Precio: RD$500</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+        </div>
+        
+        <div class="libro">
+            <img src="Recursos/azul.png" alt="Las Magias Azul">
+            <h3>Las Magias Azul</h3>
+            <p>Precio: RD$1800</p>
+            <a href="#" class="boton-comprar">Comprar</a>
+               </div>
+           </div>
+            <!-- Botón izquierdo (para desplazar hacia la izquierda) -->
+            <input type="checkbox" class="input-scroll" id="scroll-izquierda" />
+        
+            <!-- Botón derecho (para desplazar hacia la derecha) -->
+            <input type="checkbox" class="input-scroll" id="scroll-derecha" />
+            
+            <label for="scroll-izquierda" class="boton-scroll">&#9664;</label>
+            <label for="scroll-derecha" class="boton-scroll boton-scroll-derecha">&#9654;</label>
+        </div>
+                </section>
+
+<!-- Sección de Nosotros -->
+<section id="nosotros" class="seccion">
+    <h2>Nosotros</h2>
+    
+    <div class="equipo">
+        
+        <div class="miembro">
+            <img src="nosotros/grupar.jpg" width="250px" alt="equipo">
+            <h4>Equipo</h4>
+            <p>Somos un equipo de profesionales apasionados por los libros y la magia que hay en cada historia. A continuación, conoce a algunos de los miembros que forman parte de nuestro equipo:</p>
+        </div>
+        <div class="miembro">
+            <img src="nosotros/Allan.jpg" width="250px" alt="Allan Arnaut">
+            <h4>Allan Arnaut</h4>
+            <p>Matrícula: 100580133</p>
+        </div>
+        <div class="miembro">
+            <img src="nosotros/jose.jpg" width="250px" alt="José Alberto del Rosario Santos">
+            <h4>José Alberto del Rosario Santos</h4>
+            <p>Matrícula: 100598070</p>
+        </div>
+        <div class="miembro">
+            <img src="nosotros/Emmanuel.jpg" width="250px" alt="Emmanuel Beltré Ramírez">
+            <h4>Emmanuel Beltré Ramírez</h4>
+            <p>Matrícula: CD1624</p>
+        </div>
+    </div>
+</section>
+
+        <!-- Sección de Contacto -->
+        <section id="contactenos" class="seccion">
+            <h2>Contáctenos</h2>
+            <div class="contacto-info">
+                <p><strong>Teléfono:</strong> (809) 555-1234</p>
+                <p><strong>Redes Sociales:</strong></p>
+                <p>
+                    <a href="https://facebook.com/paginasmagicas" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a>
+                    <a href="https://twitter.com/paginasmagicas" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a>
+                    <a href="https://instagram.com/paginasmagicas" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                </p>
+            </div>
+            <div class="formulario-container">
+                <h3>Reserva</h3>
+                <form id="formularioContactenos" onsubmit="event.preventDefault(); limpiarFormulario();">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+
+                    <label for="numero">Número de contacto:</label>
+                    <input type="text" id="numero" name="numero" required>
+
+                    <label for="mensaje">Libro o Evento</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+        <footer class="pie">
+            <p>Contacto: (809) 555-1234 | paginasmagicas@gmail.com | Dirección: Av. Isabel Aguiar #16 Herrera, Santo Domingo Oeste | Horario: 24/7</p>
+          </footer>
+    </div>
+</body>
+</html>
+
+
