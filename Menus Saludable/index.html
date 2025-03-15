@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menús Saludables</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #4CAF50;
+      font-size: 36px;
+    }
+
+    .menu {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .menu li {
+      margin-right: 20px;
+      margin-bottom: 20px;
+      width: 240px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .menu li:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu li img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: #4CAF50;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .menu li a:hover {
+      background-color: #ddd;
+    }
+
+    .form-container {
+      margin-top: 30px;
+      width: 80%;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container input,
+    .form-container button,
+    .form-container textarea {
+      padding: 10px;
+      margin: 5px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Menús Saludables</h1>
+
+  <ul id="menu" class="menu"></ul>
+
+  <div class="form-container">
+    <h2>Agregar o Editar Plato Saludable</h2>
+    <input type="text" id="nombre" placeholder="Nombre del plato" required>
+    <input type="file" id="imagen" accept="image/*" required>
+    <textarea id="receta" placeholder="Descripción de la receta" required></textarea>
+    <button onclick="agregarPlato()">Agregar Plato</button>
+    <button id="cancelar" onclick="cancelarEdicion()" style="display: none;">Cancelar Edición</button>
+  </div>
+
+  <script>
+    let menuData = {
+      "menu": [
+        {
+          "id": 1,
+          "nombre": "Ensalada Detox",
+          "imagen": "Recursos/ensalada.jpg", 
+          "receta": "Ingredientes: espinacas, pepino, aguacate, limón, aceite de oliva."
+        },
+        {
+          "id": 2,
+          "nombre": "Batido Verde",
+          "imagen": "Recursos/batido.jpg", 
+          "receta": "Ingredientes: kale, manzana, plátano, jengibre, agua de coco."
+        },
+        {
+          "id": 3,
+          "nombre": "Tazón de Quinoa",
+          "imagen": "Recursos/quinoa.jpg", 
+          "receta": "Ingredientes: quinoa, garbanzos, tomate, pepino, limón."
+        },
+        {
+          "id": 4,
+          "nombre": "Sopa de Verduras",
+          "imagen": "Recursos/sopa.jpg", 
+          "receta": "Ingredientes: zanahoria, apio, cebolla, calabacín, caldo vegetal."
+        },
+        {
+          "id": 5,
+          "nombre": "Pasta Integral con Pesto",
+          "imagen": "Recursos/pasta.jpg", 
+          "receta": "Ingredientes: pasta integral, albahaca, ajo, piñones, aceite de oliva."
+        }
+      ]
+    };
+
+    let editingId = null;
+
+    // Renderiza el menú
+    function renderizarMenu() {
+      const menuContainer = document.getElementById('menu');
+      menuContainer.innerHTML = '';
+      menuData.menu.forEach(opcion => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = "#";
+        a.textContent = opcion.nombre;
+
+        const img = document.createElement('img');
+        img.src = opcion.imagen; 
+        img.alt = opcion.nombre;
+
+        const p = document.createElement('p');
+        p.textContent = opcion.receta;
+
+        const editarBtn = document.createElement('button');
+        editarBtn.textContent = 'Editar';
+        editarBtn.onclick = () => editarPlato(opcion.id);
+
+        const eliminarBtn = document.createElement('button');
+        eliminarBtn.textContent = 'Eliminar';
+        eliminarBtn.onclick = () => eliminarPlato(opcion.id);
+
+        li.appendChild(img);
+        li.appendChild(a);
+        li.appendChild(p);
+        li.appendChild(editarBtn);
+        li.appendChild(eliminarBtn);
+
+        menuContainer.appendChild(li);
+      });
+    }
+
+    // Función para agregar un plato
+    function agregarPlato() {
+      const nombre = document.getElementById('nombre').value;
+      const receta = document.getElementById('receta').value;
+      const imagenInput = document.getElementById('imagen');
+      const imagen = imagenInput.files[0];
+
+      if (!nombre || !receta || !imagen) {
+        alert("Por favor, complete todos los campos.");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const nuevoPlato = {
+          id: Date.now(),
+          nombre,
+          imagen: e.target.result, // Usar la imagen cargada como base64
+          receta
+        };
+
+        if (editingId === null) {
+          menuData.menu.push(nuevoPlato);
+        } else {
+          const platoIndex = menuData.menu.findIndex(plato => plato.id === editingId);
+          menuData.menu[platoIndex] = {
+            id: editingId,
+            nombre,
+            imagen: e.target.result, 
+            receta
+          };
+        }
+
+        limpiarFormulario();
+        renderizarMenu();
+      };
+
+      reader.readAsDataURL(imagen); 
+    }
+
+    // Función para editar un plato
+    function editarPlato(id) {
+      const plato = menuData.menu.find(plato => plato.id === id);
+
+      document.getElementById('nombre').value = plato.nombre;
+      document.getElementById('receta').value = plato.receta;
+
+      editingId = id;
+      document.getElementById('cancelar').style.display = "block";
+    }
+
+    // Función para cancelar la edición
+    function cancelarEdicion() {
+      limpiarFormulario();
+      editingId = null;
+      document.getElementById('cancelar').style.display = "none";
+    }
+
+    // Limpiar el formulario después de agregar o editar un plato
+    function limpiarFormulario() {
+      document.getElementById('nombre').value = '';
+      document.getElementById('receta').value = '';
+      document.getElementById('imagen').value = '';
+    }
+
+    // Función para eliminar un plato
+    function eliminarPlato(id) {
+      const confirmar = confirm("¿Estás seguro de que deseas eliminar este plato?");
+      if (confirmar) {
+        menuData.menu = menuData.menu.filter(plato => plato.id !== id);
+        renderizarMenu();
+      }
+    }
+
+    // Inicializar la vista
+    renderizarMenu();
+  </script>
+
+</body>
+</html>
