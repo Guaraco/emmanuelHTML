@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Multi-Páginas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Formulario Multi-Páginas</h1>
+  </header>
+  <div id="form">
+    <!-- Página 1: Datos Personales -->
+    <div id="pagina-1">
+      <h3>Datos Personales</h3>
+      <input type="text" id="nombre" placeholder="Nombre">
+      <input type="text" id="apellido" placeholder="Apellido">
+      <input type="number" id="edad" placeholder="Edad">
+      <select id="genero">
+        <option value="">Selecciona género</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+      </select>
+      <button onclick="siguientePagina(2)">Siguiente</button>
+    </div>
+
+    <!-- Página 2: Familiares -->
+    <div id="pagina-2" style="display:none;">
+      <h3>Familiares</h3>
+      <div id="familiares-lista"></div>
+      <button onclick="agregarFamiliar()">Agregar Familiar</button>
+      <button onclick="finalizarFamiliares()">Finalizar Registro de Familiares</button>
+      <button onclick="siguientePagina(3)">Siguiente</button>
+      <button onclick="anteriorPagina(1)">Atrás</button>
+    </div>
+
+    <!-- Página 3: Condiciones Pre-Existentes -->
+    <div id="pagina-3" style="display:none;">
+      <h3>Condiciones Pre-Existentes de Salud</h3>
+      <div id="condiciones-lista"></div>
+      <button onclick="agregarCondicion()">Agregar Condición</button>
+      <button onclick="siguientePagina(4)">Siguiente</button>
+      <button onclick="anteriorPagina(2)">Atrás</button>
+    </div>
+
+    <!-- Página 4: Internamientos -->
+    <div id="pagina-4" style="display:none;">
+      <h3>Internamientos Realizados</h3>
+      <div id="internamientos-lista"></div>
+      <button onclick="agregarInternamiento()">Agregar Internamiento</button>
+      <button onclick="siguientePagina(5)">Siguiente</button>
+      <button onclick="anteriorPagina(3)">Atrás</button>
+    </div>
+
+    <!-- Página 5: Resumen -->
+    <div id="pagina-5" style="display:none;">
+      <h3>Resumen de Datos</h3>
+      <pre id="resultado"></pre>
+      <button onclick="guardarDatos()">Guardar</button>
+      <button onclick="consultarDatos()">Consultar Datos</button>
+      <button onclick="limpiarFormulario()">Nuevo Registro</button>
+      <button onclick="anteriorPagina(4)">Atrás</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Formulario creado por: <strong>Emmanuel Beltré Ramírez</strong>, Matrícula: CD1624</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

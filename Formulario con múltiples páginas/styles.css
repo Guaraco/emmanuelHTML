@@ -1,0 +1,95 @@
+/* Fuente personalizada */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e0f7fa; /* Cian Eléctrico claro */
+  margin: 0;
+  padding: 0;
+  color: #444;
+}
+
+header {
+  background-color: #ab47bc; /* Violeta Suave */
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 2.5rem;
+}
+
+h3 {
+  color: #ff7043; /* Naranja Pastel */
+  text-align: center;
+}
+
+input, select, button {
+  display: block;
+  margin: 15px auto;
+  padding: 12px;
+  font-size: 16px;
+  width: 80%;
+  border-radius: 10px;
+  border: 2px solid #ab47bc;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Botones */
+button {
+  cursor: pointer;
+  background-color: #ab47bc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #8e24aa; /* Violeta más oscuro */
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #ab47bc;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+pre {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #ab47bc;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #444;
+}
+
+#form {
+  margin: 20px;
+  padding-bottom: 50px;
+}
+
+#form div {
+  transition: transform 0.3s ease;
+}
+
+input, select {
+  background-color: #fff3e0; /* Fondo de entrada suave */
+  color: #444;
+}
+
+button {
+  background-color: #ff7043; /* Naranja Pastel */
+}
+
+button:hover {
+  background-color: #d35c2f; /* Naranja oscuro */
+}
