@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Contacto con Código QR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      color: #34495e;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      background-color: #3498db;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #qr {
+      display: block;
+      margin: 30px auto 0;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 14px;
+      color: #7f8c8d;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Generador de Contacto QR</h2>
+    <form id="contactForm">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" required>
+
+      <label for="apellido">Apellido</label>
+      <input type="text" id="apellido" required>
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="empresa">Empresa</label>
+      <input type="text" id="empresa">
+
+      <label for="cargo">Cargo</label>
+      <input type="text" id="cargo">
+
+      <button type="submit">Generar Código QR</button>
+    </form>
+
+    <canvas id="qr" width="250" height="250"></canvas>
+    <div class="note">Escanea el código para agregar el contacto a tu celular</div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const qr = new QRious({
+      element: document.getElementById('qr'),
+      size: 250
+    });
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const apellido = document.getElementById('apellido').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const empresa = document.getElementById('empresa').value.trim();
+      const cargo = document.getElementById('cargo').value.trim();
+
+      const vCard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:${apellido};${nombre}
+FN:${nombre} ${apellido}
+ORG:${empresa}
+TITLE:${cargo}
+TEL;TYPE=CELL:${telefono}
+EMAIL:${email}
+END:VCARD`;
+
+      qr.value = vCard;
+    });
+  </script>
+</body>
+</html>
