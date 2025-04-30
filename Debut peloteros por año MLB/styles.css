@@ -1,0 +1,60 @@
+body {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Major_League_Baseball_logo.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro para contrastar */
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    width: 85%;
+    max-width: 1100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+    width: 100% !important;
+    height: 800px !important; /* Aumento aún más el tamaño del gráfico */
+}
+
+select {
+    padding: 12px;
+    margin: 20px 0;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #1c1c1c; /* Fondo oscuro para el selector */
+    color: white;
+    border: 1px solid #555;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #FF5733; /* Rojo fuerte para el botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+button:hover {
+    background-color: #FF3D00; /* Rojo más oscuro */
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
