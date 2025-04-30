@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gráfico de Peloteros por Nacionalidad</title>
-    <link href="https://cdn.jsdelivr.net/npm/chart.js" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Vinculando el archivo CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Peloteros Extranjeros en MLB (2020-2025)</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="container">
-        <h2>Gráfico de Peloteros por Nacionalidad en MLB (2020-2025)</h2>
-
-        <label for="chartType">Seleccione el tipo de gráfico:</label>
-        <select id="chartType" onchange="updateCharts()">
-            <option value="bar">Gráfico de Barras</option>
-            <option value="pie">Gráfico de Pastel</option>
-        </select>
-        
-        <button onclick="updateCharts()">Actualizar Gráfico</button>
-
-        <canvas id="yearlyChart"></canvas>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+  <div class="container">
+    <h2>Peloteros Extranjeros Debutantes en MLB (2020-2025)</h2>
+    <label for="chartType">Tipo de gráfico:</label>
+    <select id="chartType" onchange="updateCharts()">
+      <option value="bar">Barras</option>
+      <option value="line">Líneas</option>
+    </select>
+    <canvas id="mlbChart"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

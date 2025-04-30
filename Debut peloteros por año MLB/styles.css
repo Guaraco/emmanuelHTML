@@ -1,31 +1,27 @@
 body {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Major_League_Baseball_logo.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding: 0;
-    margin: 0;
-    height: 100vh;
+    background-color: #282c34; /* Fondo oscuro */
+    color: white;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro para contrastar */
-    padding: 50px;
-    border-radius: 15px;
-    text-align: center;
-    width: 85%;
-    max-width: 1100px;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
+    padding: 40px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
 }
 
 canvas {
     width: 100% !important;
-    height: 800px !important; /* Aumento aún más el tamaño del gráfico */
+    height: 500px !important; /* Ajustamos la altura del gráfico */
 }
 
 select {
@@ -33,9 +29,23 @@ select {
     margin: 20px 0;
     font-size: 18px;
     border-radius: 5px;
-    background-color: #1c1c1c; /* Fondo oscuro para el selector */
+    background-color: #1c1c1c;
     color: white;
     border: 1px solid #555;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #FF5733;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+button:hover {
+    background-color: #FF3D00;
 }
 
 button {

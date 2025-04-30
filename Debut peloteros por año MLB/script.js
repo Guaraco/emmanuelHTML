@@ -1,44 +1,48 @@
-// Datos actualizados y más realistas basados en cifras históricas de MLB
-const dataByYear = {
-  "2020": { "RD": 120, "Venezuela": 90, "USA": 650, "Cuba": 30 },
-  "2021": { "RD": 125, "Venezuela": 95, "USA": 645, "Cuba": 32 },
-  "2022": { "RD": 130, "Venezuela": 100, "USA": 640, "Cuba": 35 },
-  "2023": { "RD": 135, "Venezuela": 105, "USA": 635, "Cuba": 37 },
-  "2024": { "RD": 140, "Venezuela": 110, "USA": 630, "Cuba": 40 },
-  "2025": { "RD": 145, "Venezuela": 115, "USA": 625, "Cuba": 42 }
+// Datos simulados: Peloteros extranjeros que debutaron entre 2020 y 2025
+const debutantesMLB = {
+  "2020": 42,  // Número de peloteros extranjeros que debutaron en 2020
+  "2021": 38,  // Número de peloteros extranjeros que debutaron en 2021
+  "2022": 45,  // Número de peloteros extranjeros que debutaron en 2022
+  "2023": 50,  // Número de peloteros extranjeros que debutaron en 2023
+  "2024": 52,  // Número de peloteros extranjeros que debutaron en 2024
+  "2025": 60   // Número de peloteros extranjeros que debutaron en 2025
 };
 
-let yearlyChart;
+let mlbChart;
 
+// Genera y actualiza el gráfico de debutantes
 function generateCharts(type = 'bar') {
-  const years = Object.keys(dataByYear);
-  const countries = Object.keys(dataByYear[years[0]]);
+  const years = Object.keys(debutantesMLB);
+  const debutantes = Object.values(debutantesMLB);
 
-  const datasetsByYear = countries.map((country, idx) => {
-    return {
-      label: country,
-      data: years.map(year => dataByYear[year][country]),
-      backgroundColor: getColor(idx),
-      borderColor: getColor(idx),
-      borderWidth: 1
-    };
-  });
+  // Datos para el gráfico
+  const chartData = {
+    labels: years,
+    datasets: [{
+      label: 'Peloteros Extranjeros Debutantes',
+      data: debutantes,
+      backgroundColor: getColor(0),
+      borderColor: getColor(0),
+      borderWidth: 2,
+      fill: type === 'bar', // Rellenar solo si es un gráfico de barras
+      tension: type === 'line' ? 0.4 : 0, // Si es un gráfico de líneas, ajustar la curva
+      pointRadius: type === 'line' ? 5 : 0 // Tamaño de los puntos en las líneas
+    }]
+  };
 
-  // Destruir el gráfico previo antes de crear uno nuevo
-  if (yearlyChart) yearlyChart.destroy();
+  // Si ya existe un gráfico, destruirlo antes de crear uno nuevo
+  if (mlbChart) mlbChart.destroy();
 
-  yearlyChart = new Chart(document.getElementById('yearlyChart'), {
-    type: type === 'pie' ? 'pie' : 'bar',
-    data: {
-      labels: years,
-      datasets: datasetsByYear
-    },
+  // Crear el gráfico
+  mlbChart = new Chart(document.getElementById('mlbChart'), {
+    type: type,  // El tipo de gráfico puede ser 'bar' o 'line'
+    data: chartData,
     options: {
       responsive: true,
       plugins: {
         title: {
           display: true,
-          text: 'Peloteros por Nacionalidad (2020-2025)',
+          text: 'Peloteros Extranjeros en MLB',
           font: {
             size: 24
           }
@@ -77,17 +81,20 @@ function generateCharts(type = 'bar') {
   });
 }
 
+// Función para actualizar el tipo de gráfico
 function updateCharts() {
   const type = document.getElementById('chartType').value;
   generateCharts(type);
 }
 
+// Función para asignar colores al gráfico
 function getColor(index) {
-  // Colores más vivos y agradables
+  // Usamos colores más vivos y agradables
   const colors = ['#FF6347', '#4682B4', '#32CD32', '#FF4500']; // Rojo, Azul, Verde y Naranja
   return colors[index % colors.length];
 }
 
+// Inicializar el gráfico cuando la página se cargue
 document.addEventListener('DOMContentLoaded', () => {
-  generateCharts();
+  generateCharts();  // Genera el gráfico inicial
 });
