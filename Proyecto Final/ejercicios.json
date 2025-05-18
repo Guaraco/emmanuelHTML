@@ -1,0 +1,48 @@
+{
+  "ejercicios": [
+    {
+      "titulo": "Página Web Personal en HTML",
+      "url": "https://github.com/Guaraco/emmanuelHTML/blob/main/Mi%20pagina%20web.html"
+    },
+    {
+      "titulo": "Biografía con foto",
+      "url": "https://github.com/Guaraco/emmanuelHTML/blob/main/Perfil_foto.html"
+    },
+    {
+      "titulo": "102 Etiquetas HTML",
+      "url": "https://github.com/Guaraco/emmanuelHTML/blob/main/Etiquetas%20HTML.html"
+    },
+    {
+      "titulo": "Estructura de menús usando CSS",
+      "url": "https://github.com/Guaraco/emmanuelHTML/blob/main/Estructura%20de%20men%C3%BAs%20usando%20CSS.rar"
+    },
+    {
+      "titulo": "Validación Cédula (Módulo 10)",
+      "url": "https://github.com/Guaraco/emmanuelHTML/blob/main/algoritmo%20del%20m%C3%B3dulo%2010.html"
+    },
+    {
+      "titulo": "Menú Saludable (JSON)",
+      "url": "https://github.com/Guaraco/emmanuelHTML/tree/main/Menus%20Saludable"
+    },
+    {
+      "titulo": "Formulario con múltiples páginas",
+      "url": "https://github.com/Guaraco/emmanuelHTML/tree/main/Formulario%20con%20m%C3%BAltiples%20p%C3%A1ginas"
+    },
+    {
+      "titulo": "Formulario QR",
+      "url": "https://github.com/Guaraco/emmanuelHTML/tree/main/Formulario%20QR"
+    },
+    {
+      "titulo": "Gráfico debut peloteros",
+      "url": "https://github.com/Guaraco/emmanuelHTML/tree/main/Debut%20peloteros%20por%20a%C3%B1o%20MLB"
+    },
+    {
+      "titulo": "Formulario Empleados (BD)",
+      "url": "https://github.com/Guaraco/emmanuelHTML/tree/main/formulario_empleados"
+    },
+    {
+      "titulo": "Servicio Web Validador Cédula",
+      "url": "https://github.com/Guaraco/emmanuelHTML/tree/main/VlidadorCedula"
+    }
+  ]
+}
