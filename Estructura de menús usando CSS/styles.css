@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/fondo.jpg'); /* Aquí puedes poner la URL de la imagen de fondo que desees */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+header {
+    background-color: #003366;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .logo {
+    height: 70px; /* Aumentamos el tamaño del logo para que resalte más */
+}
+
+header .slogan {
+    color: white;
+    font-size: 16px;
+}
+
+header .bank-name {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav .menu li {
+    position: relative;
+}
+
+nav .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
+
+nav .menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav .menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #005792;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+nav .menu .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+nav .menu .dropdown-content a:hover {
+    background-color: #0073e6;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.content img {
+    max-width: 200px;
+    margin-right: 20px;
+    float: left;
+}
